@@ -33,64 +33,72 @@ What is Scroll:
 
 The no-fluff starter:
 
-- [Scroll Documentation](https://scroll.io/docs) - Official documentation to get you started with Scroll.
-- [Scroll Bridge](https://scroll.io/bridge) - Tool for moving assets between Ethereum and Scroll.
-- [Scroll Explorer](https://scroll.io/explorer) - Block explorer for the Scroll network.
+- [Scroll Documentation](https://docs.scroll.io/en/home/) - Official documentation to get you started with Scroll.
+- [Scroll Developers](https://docs.scroll.io/en/developers/) - Dev docs
 
 ## Core Concepts
 
 Explanation of fundamental concepts in the Scroll ecosystem:
 
-- [Zero-Knowledge Rollups](https://scroll.io/blog/zkrollup) - An overview of the technology powering Scroll's scaling solution.
-- [EVM Equivalence](https://scroll.io/blog/evm-equivalence) - Explanation of how Scroll maintains compatibility with Ethereum.
+- [Scroll Architecture](https://docs.scroll.io/en/technology/) - Scroll's Architecture.
+- [EVM Differences](https://docs.scroll.io/en/technology/chain/differences/) - Explanation of how Scroll is different from Ethereum.
 
 ## Development Tools
 
 Key tools and environments for Scroll:
 
-- [Scroll SDK](https://scroll.io/docs/sdk) - Development kit for building on Scroll.
-- [Hardhat Plugin](https://scroll.io/docs/hardhat-plugin) - Hardhat plugin for deploying and testing contracts on Scroll.
+- [Hardhat](https://docs.scroll.io/en/developers/developer-quickstart/#hardhat) - Hardhat configs for deploying and testing contracts on Scroll.
 
 ## Smart Contracts
 
 How to write and deploy smart contracts on Scroll:
 
-- [Deploying Smart Contracts](https://scroll.io/docs/deploy) - Guide to deploying Ethereum smart contracts on Scroll.
-- [Scroll Contract Examples](https://scroll.io/docs/examples) - Example contracts demonstrating Scroll's features.
+- [Smart Contracts](https://docs.scroll.io/en/developers/scroll-contracts/) - Guide to smart contracts on Scroll.
 
 ## Scroll Network
 
 Going into the network level:
 
-- [Scroll Mainnet](https://scroll.io/mainnet) - Information on Scroll's mainnet and how to participate.
-- [Scroll Testnet](https://scroll.io/testnet) - Details on Scroll's testnet for development and testing.
+- [Scroll Explorer](https://scroll.io/rollupscan) - Rollup Explorer
 
 ## Ecosystem Projects
 
 Cool projects built on Scroll:
 
-
-
-...and of course many more - check them out in the EasyA app!
+- [Scroll Ecosystem](https://scroll.io/ecosystem) - Projects live on Scroll.
 
 ## Resources
 
 Extra stuff:
 
-- [Scroll Blog](https://scroll.io/blog) - Official blog with updates and insights into Scroll development.
-- [Scroll GitHub](https://github.com/scroll-tech) - The main repository for Scroll's development.
+- [Scroll Nodes](https://docs.scroll.io/en/developers/guides/running-a-scroll-node/) - How to run a node.
 
 ## Handy Code Snippets
 
 Get a taste of Scroll development with these code snippets:
 
-### Connecting to Scroll
+### Configuring Hardhat
 
 ```javascript
-const { ethers } = require("ethers");
-
-const provider = new ethers.providers.JsonRpcProvider("https://rpc.scroll.io");
-console.log("Connected to Scroll");
+...
+//
+// Select the network you want to deploy to here:
+//
+const defaultNetwork = "scrollSepolia";
+...
+module.exports = {
+...
+  networks: {
+...
+          scrollSepolia: {
+            url: "https://sepolia-rpc.scroll.io/",
+            accounts: {
+              mnemonic: mnemonic(),
+            },
+          },
+  }
+...
+}
 ```
 
 ### Creating a simple fungible token
@@ -109,7 +117,7 @@ contract MyToken is ERC20 {
 ```
 
 These examples showcase:
-1. How to connect to the Scroll network using ethers.js.
+1. How to configure Hardhat.
 2. A simple ERC20 fungible token contract that can be deployed on Scroll.
 
 ## Contributing
